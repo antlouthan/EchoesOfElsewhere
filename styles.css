@@ -63,9 +63,9 @@ main {
 }
 
 .shell {
-  max-width: 1100px;
+  max-width: min(95vw, 1600px);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1.5rem, 4vw, 3rem);
   width: 100%;
   text-align: left;
 }
