@@ -299,13 +299,18 @@ section .list {
 .reveal,
 [data-reveal] {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 500ms ease, transform 500ms ease;
+  transform: none;
+  transition: opacity 800ms ease-out;
 }
 
 .reveal {
   opacity: 1;
   transform: none;
+}
+
+/* Ensure cast cards only fade, no transform */
+.cast-card[data-reveal] {
+  transform: none !important;
 }
 
 .section-heading {
@@ -352,7 +357,8 @@ article.card.reveal[data-reveal] {
   border-radius: 18px;
   padding: 1.4rem;
   box-shadow: var(--shadow);
-  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  transform: none !important;
+  transition: opacity 800ms ease-out, border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .card:hover,
@@ -411,6 +417,7 @@ article.card.reveal[data-reveal] {
   gap: 1.2rem;
   align-items: start;
   width: 100%;
+  transform: none !important;
 }
 
 .cast-card .avatar {
